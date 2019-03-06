@@ -137,7 +137,7 @@ e greedy search
 '''
 def ABCOPtim(ITE,PAR,ntrail,NPAR,MAX,MIN,Fun,xo):
 
-    trial=1 # inicializa contador p abandonar fonte de alimento
+    trial=0 # inicializa contador p abandonar fonte de alimento
     xbest=Enxame(PAR,1,MAX,MIN)[0,] #inicializa xbest
 #    xo=Enxame(PAR,NPAR,MAX,MIN) # inicializa employed bee-parte 1
     vbest_old=Fun(xbest)
