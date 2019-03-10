@@ -90,7 +90,7 @@ def PSO(W,C1,C2,NPAR,ITE,PAR,MAX,MIN,Fun,x):
 #            y=FOBJ(xnew,Fun)
 #            XY = np.c_[xnew,y] #concatena x e y em 2 colunas
             XY= np.c_[PBEST,YCAL] #concatena x e y em 2 colunas            
-            XYsorted = XY[XY[:,2].argsort()] # Ordena os dados a partir da coluna 2 (Y) para todas as linhas
+            XYsorted = XY[XY[:,-1].argsort()] # Ordena os dados a partir da coluna 2 (Y) para todas as linhas
     return GBEST,FOBEST,XYsorted
 
 
