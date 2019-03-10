@@ -15,7 +15,7 @@ def Rosenbrock(x):
     fun=0
     a=1.0
     b=100.0
-    for i in range(len(x)):
+    for i in range(len(x)-1):
         fun = ((a-x[i])**2 + b*(x[i+1]-x[i]**2)**2) 
     return fun 
 
