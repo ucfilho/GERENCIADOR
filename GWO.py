@@ -105,7 +105,7 @@ def GWO(ITE,PAR,NPAR,MAX,MIN,Fun,x): # realiza todas interacoes do GWO
         FOBEST=Fun(Alfa)
         y=FOBJ(x,Fun)
         XY= np.c_[x,y] #concatena x e y em 2 colunas            
-        XYsorted = XY[XY[:,2].argsort()] # Ordena os dados a partir da coluna 2 (Y) para todas as linhas
+        XYsorted = XY[XY[:,-1].argsort()] # Ordena os dados a partir da coluna 2 (Y) para todas as linhas
   return Alfa,FOBEST,XYsorted 
 
 
