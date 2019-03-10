@@ -106,7 +106,7 @@ def WOA(ITE,PAR,NPAR,MAX,MIN,Fun,x): # realiza todas interacoes do WOA
         FOBEST=Fun(Best)
         y=FOBJ(x,Fun)
         XY= np.c_[x,y] #concatena x e y em 2 colunas            
-        XYsorted = XY[XY[:,2].argsort()] # Ordena os dados a partir da coluna 2 (Y) para todas as linhas
+        XYsorted = XY[XY[:,-1].argsort()] # Ordena os dados a partir da coluna 2 (Y) para todas as linhas
   return Best,FOBEST,XYsorted  
 
 
