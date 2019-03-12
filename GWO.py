@@ -105,24 +105,27 @@ def GWO(ITE,PAR,NPAR,MAX,MIN,Fun,x): # realiza todas interacoes do GWO
         FOBEST=Fun(Alfa)
         y=FOBJ(x,Fun)
         XY= np.c_[x,y] #concatena x e y em 2 colunas            
-        XYsorted = XY[XY[:,-1].argsort()] # Ordena os dados a partir da coluna 2 (Y) para todas as linhas
-  return Alfa,FOBEST,XYsorted 
+        XYsorted = XY[XY[:,-1].argsort()] #Ordena a partir da last col(Y) for all row
+        BEST_XY_GWO=np.append(Alfa,FOBEST)
+
+        
+  return Alfa,FOBEST,XYsorted,BEST_XY_GWO
 
 
 '''
 ###################### Main
 import Function
-#Fun=Function.Schwefel
+Fun=Function.Schwefel
 #Fun=Function.Rosenbrock
-Fun=Function.Shubert
+#Fun=Function.Shubert
 
 NPAR=200 #Lobos
 ITE=50 #ITERACOES
 PAR=2 #NUM DE PARAMETROS A SER OTIMIZADOS
 MAX=[10,10] # MAXIMO DE CADA PARAMETRO
-MIN=[-10,-10] # MINIMO DE CADA PARAMETRO
+MIN=[-10,-10] # MINIMO DE CBEST_XY_GWO ADA PARAMETRO
 
 X=Enxame(PAR,NPAR,MAX,MIN) # inicializa lobos
-Alfa,ycal,XY=GWO(ITE,PAR,NPAR,MAX,MIN,Fun,X)
+Alfa,ycal,XY,BEST_XY_GWO=GWO(ITE,PAR,NPAR,MAX,MIN,Fun,X)
 print("Lobos=",NPAR," Iteracoes=",ITE,"   x=",Alfa,"fobj=",ycal,"\n")
 '''

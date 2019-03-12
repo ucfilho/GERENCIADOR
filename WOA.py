@@ -106,8 +106,9 @@ def WOA(ITE,PAR,NPAR,MAX,MIN,Fun,x): # realiza todas interacoes do WOA
         FOBEST=Fun(Best)
         y=FOBJ(x,Fun)
         XY= np.c_[x,y] #concatena x e y em 2 colunas            
-        XYsorted = XY[XY[:,-1].argsort()] # Ordena os dados a partir da coluna 2 (Y) para todas as linhas
-  return Best,FOBEST,XYsorted  
+        XYsorted = XY[XY[:,-1].argsort()] #Ordena a partir da last col(Y) for all row
+        BEST_XY_WOA=np.append(Best,FOBEST)
+  return Best,FOBEST,XYsorted,BEST_XY_WOA  
 
 
 '''
@@ -124,6 +125,6 @@ MAX=[10,10] # MAXIMO DE CADA PARAMETRO
 MIN=[-10,-10] # MINIMO DE CADA PARAMETRO
 
 X=Enxame(PAR,NPAR,MAX,MIN) # inicializa baleias
-Best,FOBEST,XY=WOA(ITE,PAR,NPAR,MAX,MIN,Fun,X)
+Best,FOBEST,XY,BEST_XY_WOA=WOA(ITE,PAR,NPAR,MAX,MIN,Fun,X)
 print("Baleias=",NPAR,"      Iteracoes=",ITE,"   x=",Best,"       fobj=",FOBEST,"\n")
 '''

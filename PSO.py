@@ -90,8 +90,9 @@ def PSO(W,C1,C2,NPAR,ITE,PAR,MAX,MIN,Fun,x):
 #            y=FOBJ(xnew,Fun)
 #            XY = np.c_[xnew,y] #concatena x e y em 2 colunas
             XY= np.c_[PBEST,YCAL] #concatena x e y em 2 colunas            
-            XYsorted = XY[XY[:,-1].argsort()] # Ordena os dados a partir da coluna 2 (Y) para todas as linhas
-    return GBEST,FOBEST,XYsorted
+            XYsorted = XY[XY[:,-1].argsort()] #Ordena a partir da last col(Y) for all row
+            BEST_XY_PSO=np.append(GBEST,FOBEST)
+    return GBEST,FOBEST,XYsorted,BEST_XY_PSO
 
 
 
@@ -128,7 +129,7 @@ PAR=len(MAX) #NUM DE PARAMETROS A SER OTIMIZADOS
 ############################## RESOLUÇÃO E IMPRESSÃO
 X=Enxame(PAR,NPAR,MAX,MIN) # inicializa partículas
 
-GBEST,FOBEST,XYsorted =PSO(W,C1,C2,NPAR,ITE,PAR,MAX,MIN,Fun,X)
+GBEST,FOBEST,XYsorted,BEST_XY_PSO =PSO(W,C1,C2,NPAR,ITE,PAR,MAX,MIN,Fun,X)
 
 print('\n','Ótimo=',FOBEST)
 print('\n','XBEST=',GBEST)
