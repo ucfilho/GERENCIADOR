@@ -13,10 +13,8 @@ from math import *
 '''Rosembrock Function'''
 def Rosenbrock(x):
     fun=0
-    a=1.0
-    b=100.0
     for i in range(len(x)-1):
-        fun = ((a-x[i])**2 + b*(x[i+1]-x[i]**2)**2) 
+        fun = 100*(x[i]-x[i-1]**2)**2 + (1-x[i-1])**2
     return fun 
 
 #Rosembrock_domain=[-30,30]
