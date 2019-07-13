@@ -85,7 +85,7 @@ def TRADE(XY,PTRADE): # Separa melhores agentes para gerenciador
   XYT=XY[0:PTRADE,]
   return XYT
 
-def STACKSORT(XY1,XY2,XY3): # Junta e ordena um array
-  XY=np.vstack((XY1,XY2,XY3))
+def STACKSORT(XY1,XY2): # Junta e ordena um array
+  XY=np.vstack((XY1,XY2))
   XYsorted = XY[XY[:,-1].argsort()] #Ordena a partir de Y
   return XYsorted
