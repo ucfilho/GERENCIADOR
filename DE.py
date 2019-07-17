@@ -22,8 +22,8 @@ def Fun( sol):
   
   return top;
 
-def de(MAX,MIN, mut, crossp, popsize, its,fobj):
-  
+def DE(MAX,MIN, mut, crossp, popsize, its,fobj):
+    
   Num=len(MAX)
   bounds=[(0,0)] * Num
   for i in range(Num):
