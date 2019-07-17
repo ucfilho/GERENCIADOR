@@ -18,6 +18,7 @@ def CalcFit(fun):
       result=1+fabs(fun)
     return result
 
+'''
 def Fun( sol):
   #Schwefel(x):
   x=sol  
@@ -28,7 +29,8 @@ def Fun( sol):
     top=(418.9829*len(x)-summ) 
   
   return top;
-
+ ''' 
+  
 def BestSource(GlobMin,GlobPars,Foods,f):
   FoodNumber=len(Foods[:,0])
   D=len(Foods[0,:])
