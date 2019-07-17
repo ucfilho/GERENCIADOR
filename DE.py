@@ -10,7 +10,7 @@ Original file is located at
 import numpy as np
 
 '''https://pablormier.github.io/2017/09/05/a-tutorial-on-differential-evolution-with-python/'''
-
+'''
 def Fun( sol):
   #Schwefel(x):
   x=sol  
@@ -21,6 +21,7 @@ def Fun( sol):
     top=(418.9829*len(x)-summ) 
   
   return top;
+'''
 
 def DE(MAX,MIN, mut, crossp, popsize, its,fobj):
     
