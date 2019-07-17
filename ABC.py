@@ -65,7 +65,7 @@ def initial(fitness,trial,f,Foods,GlobMin,GlobPars,MIN,MAX,Fun):
     GlobPars[i]=Foods[0,i]
   return  f,Foods,GlobMin,GlobPars
 
-def EmployedBees(trial,Foods,MIN,MAX,Fun,fitness,f):
+def EmployedBees(trial,Foods,MIN,MAX,limit,Fun,fitness,f):
   FoodNumber=len(Foods[:,0])
   NP=FoodNumber
   D=len(Foods[0,:])
@@ -164,7 +164,7 @@ def OnlookerBees(trial,Foods,MIN,MAX, Fun,prob,fitness,f):
         i=0
   return trial,Foods
 
-def ScoutBees(fitness,f,Foods,trial,MIN,MAX):
+def ScoutBees(fitness,f,Foods,trial,MIN,MAX,limit):
   FoodNumber=len(Foods[:,0])
   max_trial=0
   for i in range(1,FoodNumber):
@@ -190,11 +190,11 @@ def ABC(ITE,PAR,NPAR,MAX,MIN,Fun,Foods):
   GlobMin,GlobPars,Foods=BestSource(GlobMin,GlobPars,Foods,f)
 
   for iter in range(ITE):
-    trial,Foods=EmployedBees(trial,Foods,MIN,MAX,Fun,fitness,f)
+    trial,Foods=EmployedBees(trial,Foods,MIN,MAX,limit,Fun,fitness,f)
     fitness,prob=CalcProb(fitness,prob)
     trial,Foods=OnlookerBees(trial,Foods,MIN,MAX,Fun,prob,fitness,f)
     GlobMin,GlobPars,Foods=BestSource(GlobMin,GlobPars,Foods,f)
-    trial,Foods=ScoutBees(fitness,f,Foods,trial,MIN,MAX)
+    trial,Foods=ScoutBees(fitness,f,Foods,trial,MIN,MAX,limit)
   #print(Foods)
   x=Foods
   y=f
