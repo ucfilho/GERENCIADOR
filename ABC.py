@@ -174,7 +174,7 @@ def ScoutBees(fitness,f,Foods,trial,MIN,MAX,limit):
     Foods,trial,f,fitness=init(max_trial,Foods,trial,f,fitness,MIN,MAX,Fun)
   return trial,Foods
 
-def ABC(ITE,PAR,NPAR,MAX,MIN,Fun,Foods):
+def ABC(ITE,PAR,NPAR,MAX,MIN,limit,Fun,Foods):
   f=np.zeros(NPAR)
   #Foods=np.zeros((NPAR,PAR)) 
   runtime=1
