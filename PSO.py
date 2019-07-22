@@ -30,7 +30,7 @@ def Enxame(PAR,NPAR,MAX,MIN): #a PAR não necessário
 #VE rotina velocidade utilizada na correcao das particulas
 #nesta versao do programa fazemos a adequacao restricao de VELOCIDADE: 30% do limite
 
-def VE(X,VEL,FOBEST,PBEST,W,C1,C2,MAX,MIN):
+def VE(X,VEL,GBEST,PBEST,W,C1,C2,MAX,MIN):
     rows = X.shape[0]
     cols = X.shape[1]
     VEL=np.zeros((rows, cols))
@@ -38,7 +38,7 @@ def VE(X,VEL,FOBEST,PBEST,W,C1,C2,MAX,MIN):
         for j in range(cols):
             R1=np.random.random()
             R2=np.random.random()
-            VELOCIDADE=W*VEL[i,j]+C1*R1*(PBEST[i,j]-X[i,j])+C2*R2*(FOBEST[j]-X[i,j])
+            VELOCIDADE=W*VEL[i,j]+C1*R1*(PBEST[i,j]-X[i,j])+C2*R2*(GBEST[j]-X[i,j])
             if(VELOCIDADE> MAX[j]):
                 VELOCIDADE=0.5*MAX[j]
             if(VELOCIDADE<MIN[j]):
