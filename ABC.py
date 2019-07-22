@@ -223,7 +223,7 @@ runtime=1 # quantas vezes vai rodar para tirar a media
 Foods=np.zeros((NPAR,PAR))
 
 for run in range(runtime):
-  BEST,FOBEST,XY,BEST_XY= ABC(ITE,PAR,NPAR,MAX,MIN,Fun,Foods)  
+  BEST,FOBEST,XY,BEST_XY= ABC(ITE,PAR,NPAR,MAX,MIN,limit,Fun,Foods)  
 
   print("GlobalParam e Solucao:", BEST_XY)
     
