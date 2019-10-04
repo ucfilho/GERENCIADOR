@@ -13,7 +13,7 @@ from math import *
 '''Rosembrock Function'''
 def Rosenbrock(x):
     fun=0
-    for i in range(len(x)-1):
+    for i in range(1,len(x)):
         fun = 100*(x[i]-x[i-1]**2)**2 + (1-x[i-1])**2
     return fun 
 
